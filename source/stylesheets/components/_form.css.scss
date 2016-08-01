@@ -1,0 +1,23 @@
+.form-login {
+  padding: 50px 30px;
+  background: #F6F6F6;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px #ECECEC;
+  margin: 75px;
+  color: #292C2F;
+  h1 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.form-login .btn {
+  width: 100%;
+  line-height: 30px;
+}
+
+.form-group {
+  text-align: left;
+}
