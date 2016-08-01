@@ -1,7 +1,7 @@
 /* Footer design */
 
 .footer {
-  background-color: #292C2F;
+  background-color: $footer-black;
   padding: 20px 0 10px 0;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .company-name {
-  color: #8B8E92;
+  color: $gray-light;
   font-size: 14px;
 }
 
