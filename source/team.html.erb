@@ -1,0 +1,15 @@
+---
+title: Our team
+---
+
+<h1 class="text-center">Our team</h1>
+<ul class="list-inline text-center padded team">
+  <% ["anne", "seb", "romain"].each do |member| %>
+    <li class="padded">
+      <h3><%= member.capitalize %></h3>
+      <%= image_tag "#{member}.jpg", class: "avatar-large" %>
+    </li>
+  <% end %>
+</ul>
+
+<%= partial "newsletter" %>

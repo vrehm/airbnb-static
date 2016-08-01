@@ -4,6 +4,7 @@ title: Vincent's Airbnb static page
 
 <!-- Your banner code -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://unsplash.it/g/1280/720');">
+
   <div class="login">
 
     <!-- Small modal -->
@@ -59,25 +60,26 @@ title: Vincent's Airbnb static page
 
   </div>
 </div>
+
 <div class="container text-center padded features">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <img src="images/globe.png" alt="">
+      <%= image_tag "globe.png" %>
       <h2>Discover the world</h2>
       <p>The earth is your new home.</p>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <img src="images/dollar.png" alt="">
+      <%= image_tag "dollar.png" %>
       <h2>Pay online</h2>
       <p>No cash issues anymore.</p>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <img src="images/beer.png" alt="">
+      <%= image_tag "beer.png" %>
       <h2>Meet people</h2>
       <p>Discover new culture and lifestyle.</p>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <img src="images/heart.png" alt="">
+      <%= image_tag "heart.png" %>
       <h2>Share and love</h2>
       <p>Join a community you will love.</p>
     </div>
@@ -89,73 +91,45 @@ title: Vincent's Airbnb static page
     <h2 class="text-center">Your next trip</h2>
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path ("card-paris.jpg") %>');">
           <div class="card-category">Paris</div>
           <div class="card-description">
             <h2>Seb's home</h2>
             <p>Charming room with patio</p>
           </div>
-          <img class="card-user avatar avatar-large" src="images/seb.jpg">
-          <a class="card-link" href="#" ></a>
+          <%= image_tag "seb.jpg", class: "card-user avatar avatar-large" %>
+          <%= link_to "", "team.html", class: "card-link" %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpg');">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path ("card-brussels.jpg") %>');">
           <div class="card-category">Brussels</div>
           <div class="card-description">
             <h2>Anne's home</h2>
             <p>Lovely house</p>
           </div>
-          <img class="card-user avatar avatar-large" src="images/anne.jpg">
-          <a class="card-link" href="#" ></a>
+          <%= image_tag "anne.jpg", class: "card-user avatar avatar-large" %>
+          <%= link_to "", "team.html", class: "card-link" %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpg');">
+        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path ("card-london.jpg") %>');">
           <div class="card-category">London</div>
           <div class="card-description">
             <h2>Romain's home</h2>
             <p>Nice flat in Piccadilly</p>
           </div>
-          <img class="card-user avatar avatar-large" src="images/romain.jpg">
-          <a class="card-link" href="#" ></a>
+          <%= image_tag "romain.jpg", class: "card-user avatar avatar-large" %>
+          <%= link_to "", "team.html", class: "card-link" %>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-  <!-- Your newsletter code -->
-  <div class="text-center padded" id="newsletter">
-    <h2>Get news from us</h2>
-    <p>Leave us your mail and get news from us</p>
-    <form class="form-inline">
-      <input type="email" placeholder="bob@gmail.com" class="form-control">
-      <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
-    </form>
-  </div>
-</div>
+<!-- Your newsletter code -->
+
+<%= partial "newsletter" %>
 
 <!-- Your map code -->
-<div id="map" style="width: 100%; height: 400px;"></div>
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
-<script type="text/javascript">
-var myLatlng = new google.maps.LatLng(48.8655909, 2.378983);
-
-var myOptions = {
-  zoom: 16,
-  center: myLatlng,
-  scrollwheel: false,
-  mapTypeId: google.maps.MapTypeId.ROADMAP,
-  styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}] // TODO: replace [] by array from https://snazzymaps.com/
-};
-
-var map = new google.maps.Map(document.getElementById('map'), myOptions);
-var marker = new google.maps.Marker({
-  position: myLatlng,
-  map: map,
-  title: "You are here!"
-});
-</script>
+<%= partial "map" %>
