@@ -1,4 +1,16 @@
-- name: Some product
-  image: some_product.png
-- name: Other product
-  image: other_product.png
+globe:
+  moto: Discover the world
+  catchline: The earth is your new home.
+  image: globe.png
+dollar:
+  moto: Pay online
+  catchline: No cash issues anymore.
+  image: dollar.png
+beer:
+  moto: Meet people
+  catchline: Discover new culture and lifestyle.
+  image: beer.png
+heart:
+  moto: Share and love
+  catchline: Join a community you will love.
+  image: heart.png

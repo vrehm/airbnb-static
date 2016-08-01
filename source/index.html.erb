@@ -11,52 +11,20 @@ title: Vincent's Airbnb static page
     <h1>Some Stuff</h1>
     <p>Very cool stuff, useful and smart</p>
 
-    <form class="form-inline">
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputEmail3"></label>
-        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Where ?">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputEmail3">Check-in</label>
-        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Check-in">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputPassword3">Check-out</label>
-        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Check-out">
-      </div>
-      <select class="form-control">
-        <option value="1">1 guest</option>
-        <option value="2">2 guests</option>
-        <option value="3">3 guests</option>
-      </select>
-      <button type="submit" class="btn btn-danger">Search</button>
-    </form>
+    <%= partial "banner-inline-form" %>
   </div>
 
 </div>
 
 <div class="container text-center padded features">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <%= image_tag "globe.png" %>
-      <h2>Discover the world</h2>
-      <p>The earth is your new home.</p>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <%= image_tag "dollar.png" %>
-      <h2>Pay online</h2>
-      <p>No cash issues anymore.</p>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <%= image_tag "beer.png" %>
-      <h2>Meet people</h2>
-      <p>Discover new culture and lifestyle.</p>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <%= image_tag "heart.png" %>
-      <h2>Share and love</h2>
-      <p>Join a community you will love.</p>
-    </div>
+    <% data.products.each do |product, details| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag details.image %>
+        <h2><%= details.moto %></h2>
+        <p><%= details.catchline %></p>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -64,39 +32,19 @@ title: Vincent's Airbnb static page
   <div class="container">
     <h2 class="text-center">Your next trip</h2>
     <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path ("card-paris.jpg") %>');">
-          <div class="card-category">Paris</div>
-          <div class="card-description">
-            <h2>Seb's home</h2>
-            <p>Charming room with patio</p>
+      <% data.flats.each do |owner, flat| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card breath" style="background-image: url('<%= image_path flat.picture %>');">
+            <div class="card-category"><%= flat.city %></div>
+            <div class="card-description">
+              <h2><%= flat.name %></h2>
+              <p><%= flat.summary %></p>
+            </div>
+            <%= image_tag flat.owner_picture, class:"card-user avatar avatar-large" %>
+            <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
           </div>
-          <%= image_tag "seb.jpg", class: "card-user avatar avatar-large" %>
-          <%= link_to "", "team.html", class: "card-link" %>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path ("card-brussels.jpg") %>');">
-          <div class="card-category">Brussels</div>
-          <div class="card-description">
-            <h2>Anne's home</h2>
-            <p>Lovely house</p>
-          </div>
-          <%= image_tag "anne.jpg", class: "card-user avatar avatar-large" %>
-          <%= link_to "", "team.html", class: "card-link" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path ("card-london.jpg") %>');">
-          <div class="card-category">London</div>
-          <div class="card-description">
-            <h2>Romain's home</h2>
-            <p>Nice flat in Piccadilly</p>
-          </div>
-          <%= image_tag "romain.jpg", class: "card-user avatar avatar-large" %>
-          <%= link_to "", "team.html", class: "card-link" %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
